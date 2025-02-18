@@ -1,0 +1,84 @@
+<!-- Apartado Sobre mí -->
+<section id="sobre-mi">
+    <div class="container">
+      <!-- Galería de imágenes -->
+      <div class="imagenes">
+        <img src="https://res.cloudinary.com/divr5jb7h/image/upload/v1725937096/286337534_173014068501099_856836812325574454_n_jyxknk.jpg" alt="Alejandro Vélez Gómez 1">
+        <img src="https://res.cloudinary.com/divr5jb7h/image/upload/v1725936909/289466486_982853518990715_6944819474608860712_n_ykb9ry.jpg" alt="Alejandro Vélez Gómez 2">
+        <img src="https://res.cloudinary.com/divr5jb7h/image/upload/v1738692459/IMG-20230316-WA0004_bh7mft.jpg" alt="Alejandro Vélez Gómez 3">
+        <img src="https://res.cloudinary.com/divr5jb7h/image/upload/v1738692459/IMG-20240121-WA0001_vdx6uc.jpg" alt="Alejandro Vélez Gómez 4">
+        <img src="https://res.cloudinary.com/divr5jb7h/image/upload/v1738692459/IMG-20230325-WA0056_obdgdr.jpg" alt="Alejandro Vélez Gómez 5">
+      </div>
+      <!-- Sección de texto -->
+      <div class="texto">
+        <h2>Sobre mí</h2>
+        <p>Soy Alejandro Vélez Gómez, desarrollador Full Stack de 21 años. Estudio de manera autodidacta y universitaria, creando proyectos como método de aprendizaje.</p>
+        <p>Disfruto ejercitarme, haciendo gimnasio, calistenia y baloncesto. Me apasiona mejorar continuamente y explorar nuevas ideas en tecnología y desarrollo.</p>
+        <p><strong>Tecnología:</strong> Me apasiona estar al día con las últimas tendencias en desarrollo web y móvil. Disfruto experimentando con nuevas tecnologías y frameworks.</p>
+        <p>Subo videos de mis proyectos a mi canal personal de YouTube: <a href="https://www.youtube.com/@AlejandroVg-io3zb" target="_blank">Visita mi canal</a></p>
+      </div>
+    </div>
+  </section>
+  
+  <style>
+    /* Estilos para el apartado Sobre mí */
+    #sobre-mi {
+      background-color: #fff;
+      color: #000;
+      padding: 50px 20px;
+      font-family: 'Arial', sans-serif;
+    }
+    #sobre-mi .container {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    /* Galería de imágenes en forma de grid */
+    #sobre-mi .imagenes {
+      flex: 1 1 300px;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 10px;
+    }
+    #sobre-mi .imagenes img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      border: 2px solid #000;
+    }
+    /* Sección de texto */
+    #sobre-mi .texto {
+      flex: 1 1 300px;
+      margin-left: 20px;
+    }
+    #sobre-mi .texto h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+    #sobre-mi .texto p {
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+    #sobre-mi .texto a {
+      color: #000;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    #sobre-mi .texto a:hover {
+      text-decoration: underline;
+    }
+    /* Adaptabilidad para dispositivos móviles */
+    @media (max-width: 768px) {
+      #sobre-mi .container {
+        flex-direction: column;
+      }
+      #sobre-mi .texto {
+        margin-left: 0;
+        margin-top: 20px;
+      }
+    }
+  </style>
+  
