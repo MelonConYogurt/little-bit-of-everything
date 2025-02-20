@@ -1,6 +1,6 @@
 import requests
 
-TOKEN = "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"
+
 USERNAME = "MelonConYogurt"
 HEADERS = {"Authorization": f"token {TOKEN}", "Accept": "application/vnd.github.v3+json"}
 
