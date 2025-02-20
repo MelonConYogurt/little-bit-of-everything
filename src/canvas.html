@@ -6,21 +6,31 @@
     <title>Canvas con Varias Figuras</title>
 </head>
 <body>
-    <canvas id="miCanvas" width="400" height="200" style="border:1px solid black;"></canvas>
+    <canvas id="miCanvas" width="1000" height="1000" style="border:1px solid black;"></canvas>
 
     <script>
         var canvas = document.getElementById("miCanvas");
         var ctx = canvas.getContext("2d");
+        var widht = 400
+        var height = 200
+        var sizeX = 20
+        var sizeY = 20
+        var bordeWidht = 1
+
+        var rows = 10
+        var cols = 10
+
+        var maxX = rows * (sizeX + (bordeWidht * 2))
+        var maxY = cols * (sizeY + (bordeWidht * 2))
 
         ctx.strokeStyle = "black"; 
-        ctx.lineWidth = 1; 
-        // for (var x = 0; x < 300  ; x += 12){
-        //     for (var y = 0 ; y < 200; y += 12){
-        //         ctx.strokeRect(x, y, 10, 10);
-        //     }
-        // }
-        ctx.strokeRect(0, 0, 10, 10)
-        ctx.strokeRect(12, 0, 10, 10)
+        ctx.lineWidth = bordeWidht; 
+        for (var y = 0; y < maxY  ; y += (sizeY + (bordeWidht * 2))){
+            for (var x = 0 ; x < maxX; x += (sizeX + (bordeWidht * 2))){
+                ctx.strokeRect(x, y, sizeX, sizeY);
+            }
+        }
+      
     </script>
 </body>
 </html>
