@@ -3,34 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Canvas con Varias Figuras</title>
+    <title>Canvas ImageData Example</title>
 </head>
 <body>
-    <canvas id="miCanvas" width="1000" height="1000" style="border:1px solid black;"></canvas>
-
+    <canvas id="miCanvas" width="200" height="200" style="border:1px solid black;"></canvas>
     <script>
-        var canvas = document.getElementById("miCanvas");
-        var ctx = canvas.getContext("2d");
-        var widht = 400
-        var height = 200
-        var sizeX = 20
-        var sizeY = 20
-        var bordeWidht = 1
+        // Obtener el contexto del canvas
+        let canvas = document.getElementById("miCanvas");
+        let ctx = canvas.getContext("2d");
 
-        var rows = 10
-        var cols = 10
+        // // Dibujar un rectángulo rojo
+        // ctx.fillStyle = "red";
+        // ctx.fillRect(50, 50, 100, 100);
 
-        var maxX = rows * (sizeX + (bordeWidht * 2))
-        var maxY = cols * (sizeY + (bordeWidht * 2))
+        const img = new Image()
 
-        ctx.strokeStyle = "black"; 
-        ctx.lineWidth = bordeWidht; 
-        for (var y = 0; y < maxY  ; y += (sizeY + (bordeWidht * 2))){
-            for (var x = 0 ; x < maxX; x += (sizeX + (bordeWidht * 2))){
-                ctx.strokeRect(x, y, sizeX, sizeY);
-            }
-        }
-      
+
+        img.crossOrigin = 'anonymous'
+        img.src= 'https://avatars.githubusercontent.com/u/141779507?v=4'
+        ctx.drawImage(img, 0,0, canvas.width, canvas.height)
+
+        // // Obtener los datos de la imagen
+        // let imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+        // let data = imageData.data;
+
+        // console.log("Recorriendo los píxeles:");
+        // for (let y = 0; y < imageData.height; y++) {
+        //     for (let x = 0; x < imageData.width; x++) {
+        //         let index = (y * imageData.width + x) * 4;
+        //         let r = data[index];     // Rojo
+        //         let g = data[index + 1]; // Verde
+        //         let b = data[index + 2]; // Azul
+        //         let a = data[index + 3]; // Alpha
+
+        //         // Mostrar solo los píxeles no transparentes
+        //         if (a !== 0) {
+        //             console.log(`Píxel en (${x}, ${y}): rgba(${r}, ${g}, ${b}, ${a})`);
+        //         }
+        //     }
+        // }
+
+        // // Convertir la imagen a escala de grises
+        // for (let i = 0; i < data.length; i += 4) {
+        //     let avg = (data[i] + data[i + 1] + data[i + 2]) / 3;
+        //     data[i] = avg;     // Rojo
+        //     data[i + 1] = avg; // Verde
+        //     data[i + 2] = avg; // Azul
+        // }
+
+        // // Volver a dibujar la imagen en escala de grises
+        // ctx.putImageData(imageData, 0, 0);
     </script>
 </body>
 </html>
