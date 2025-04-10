@@ -3,56 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Canvas ImageData Example</title>
+    <title>Infograma: Sistemas Operativos Distribuidos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #333;
+        }
+        .section {
+            margin: 20px 0;
+            padding: 15px;
+            background: #e0f7fa;
+            border-radius: 8px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background: #00796b;
+            color: white;
+        }
+    </style>
 </head>
 <body>
-    <canvas id="miCanvas" width="200" height="200" style="border:1px solid black;"></canvas>
-    <script>
-        // Obtener el contexto del canvas
-        let canvas = document.getElementById("miCanvas");
-        let ctx = canvas.getContext("2d");
+ 
 
-        // // Dibujar un rectángulo rojo
-        // ctx.fillStyle = "red";
-        // ctx.fillRect(50, 50, 100, 100);
-
-        const img = new Image()
-
-
-        img.crossOrigin = 'anonymous'
-        img.src= 'https://avatars.githubusercontent.com/u/141779507?v=4'
-        ctx.drawImage(img, 0,0, canvas.width, canvas.height)
-
-        // // Obtener los datos de la imagen
-        // let imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-        // let data = imageData.data;
-
-        // console.log("Recorriendo los píxeles:");
-        // for (let y = 0; y < imageData.height; y++) {
-        //     for (let x = 0; x < imageData.width; x++) {
-        //         let index = (y * imageData.width + x) * 4;
-        //         let r = data[index];     // Rojo
-        //         let g = data[index + 1]; // Verde
-        //         let b = data[index + 2]; // Azul
-        //         let a = data[index + 3]; // Alpha
-
-        //         // Mostrar solo los píxeles no transparentes
-        //         if (a !== 0) {
-        //             console.log(`Píxel en (${x}, ${y}): rgba(${r}, ${g}, ${b}, ${a})`);
-        //         }
-        //     }
-        // }
-
-        // // Convertir la imagen a escala de grises
-        // for (let i = 0; i < data.length; i += 4) {
-        //     let avg = (data[i] + data[i + 1] + data[i + 2]) / 3;
-        //     data[i] = avg;     // Rojo
-        //     data[i + 1] = avg; // Verde
-        //     data[i + 2] = avg; // Azul
-        // }
-
-        // // Volver a dibujar la imagen en escala de grises
-        // ctx.putImageData(imageData, 0, 0);
-    </script>
+        <div class="section">
+            <h2>Comparación con Multiprogramación</h2>
+            <table>
+                <tr>
+                    <th>Aspecto</th>
+                    <th>Multiprogramación</th>
+                    <th>Distribuidos</th>
+                </tr>
+                <tr>
+                    <td>Memoria</td>
+                    <td>Paginación y segmentación</td>
+                    <td>Memoria distribuida</td>
+                </tr>
+                <tr>
+                    <td>Procesador</td>
+                    <td>Planificación por prioridades</td>
+                    <td>Balanceo de carga</td>
+                </tr>
+                <tr>
+                    <td>Administración del disco</td>
+                    <td>Archivos locales</td>
+                    <td>Almacenamiento en red</td>
+                </tr>
+                <tr>
+                    <td>Gestión de E/S</td>
+                    <td>Buffers y caché</td>
+                    <td>Middleware</td>
+                </tr>
+                <tr>
+                    <td>Gestión de Internet</td>
+                    <td>Protocolos básicos</td>
+                    <td>Redes seguras y avanzadas</td>
+                </tr>
+            </table>
+        </div>
+    </div>
 </body>
 </html>
